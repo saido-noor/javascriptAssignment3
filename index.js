@@ -51,9 +51,18 @@ class Mkulima{
      
      }
 
-     this.getPro=(getId)=>{
-      console.log(this.farms.find(object=>object.farmId===getId));
+     this.getProduct=(IdProduct)=>{
+      console.log(this.products.find(object=>object.productId===IdProduct));
       
+     }
+
+     this.printProduct= ()=>{
+      console.log(this.products);
+     }
+
+     this.calculateOrderCost= (productId,quantity)=>{
+      let products = this.products.find(object=>object.productId===productId);
+      console.log(`${quantity} ${products.productName} for KES ${quantity*products.price}`);
      }
 
 
@@ -86,3 +95,5 @@ console.log(mkulima.products);
 
 mkulima.updateProduct("10","45","Apples",300)
 console.log(mkulima.products)
+
+mkulima.calculateOrderCost("10",30);
