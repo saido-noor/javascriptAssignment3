@@ -61,8 +61,8 @@ class Mkulima{
      }
 
      this.calculateOrderCost= (productId,quantity)=>{
-      let products = this.products.find(object=>object.productId===productId);
-      console.log(`${quantity} ${products.productName} for KES ${quantity*products.price}`);
+      let produc = this.products.find(object=>object.productId===productId);
+      console.log(`${quantity} ${produc.productName} for KES ${quantity*produc.price}`);
      }
 
 
@@ -96,4 +96,5 @@ console.log(mkulima.products);
 mkulima.updateProduct("10","45","Apples",300)
 console.log(mkulima.products)
 
-mkulima.calculateOrderCost("10",30);
+mkulima.calculateOrderCost("130",30);
+console.log();
