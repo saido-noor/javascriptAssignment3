@@ -43,18 +43,21 @@ class Mkulima{
       this.products.splice(indexOfProduct,1);
      }
 
-     this.updateProduct = (productId2,productName2,price2) =>{
-      let updateproducts = this.farms.find(item=>item.productId===productId2)
-      updateFrm.productId = productId2;
-      updateFrm.productName = productName2;
-      updateFrm.price = price2;
+     this.updateProduct = (productid,productId2,productName2,price2) =>{
+      let updateproducts = this.products.find(item=>item.productId===productid)
+      updateproducts.productId=productId2;
+      updateproducts.productName=productName2;
+      updateproducts.price=price2;
      
+     }
+
+     this.getPro=(getId)=>{
+      console.log(this.farms.find(object=>object.farmId===getId));
+      
      }
 
 
     }
-
-
 }
 
 let mkulima = new Mkulima()
@@ -81,5 +84,5 @@ mkulima.removeProduct("30");
 console.log(mkulima.products);
 
 
-mkulima.updateFarm("45","")
-console.log(mkulima.farms)
+mkulima.updateProduct("10","45","Apples",300)
+console.log(mkulima.products)
